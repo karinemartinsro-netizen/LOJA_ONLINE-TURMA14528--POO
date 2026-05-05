@@ -10,6 +10,7 @@ def exibir_menu():
     print("[1] Adicionar Roupa ")
     print("[2] Adicionar Eletrônico ")
     print("[3] Ver resumo do carrinho ")
+    print("[4] Remover item do carrinho  ")
     print("[0] Sair do sistema ")
     print("=" *45)
 
@@ -48,6 +49,15 @@ def main():
 
         elif opcao == "3" :
             carrinho.exibir_resumo()
+
+        elif  opcao =="4":
+            print("\n ----- CADASTRANDO ELETRÔNICO  -----")
+            nome = input ("Nome do eletrênico ")
+            try: 
+                preco = float (input("Preço : R$ "))
+                voltagem = input("Voltagem (Ex. 110V/220V) : ")
+                novo_eletronico = Eletronico(nome, preco, voltagem)
+                carrinho.adicionar_produto(novo_eletronico)
 
         elif opcao == "0" :
             print("Encerrando o sistema, até logo! ")
